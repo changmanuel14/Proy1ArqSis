@@ -1,0 +1,82 @@
+﻿@model Models.Mobiliario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mobiliario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadomobiliarioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadomobiliarioId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipomobiliarioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipomobiliarioId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UbicacionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UbicacionId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion_mobiliario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion_mobiliario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_creacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_creacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numero_serie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numero_serie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_baja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_baja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.observacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.observacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MobiliarioId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

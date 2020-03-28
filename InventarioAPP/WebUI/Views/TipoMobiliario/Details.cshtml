@@ -1,0 +1,50 @@
+﻿@model Models.Tipomobiliario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tipomobiliario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoriaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoriaId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.control_serie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.control_serie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado_tipomobiliario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado_tipomobiliario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TipomobiliarioId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,74 @@
+﻿@model Models.Empleado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombres_empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombres_empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellidos_empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidos_empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion_empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion_empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono_empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono_empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cui_empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cui_empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_nacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_nacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado_empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado_empleado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmpleadoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
