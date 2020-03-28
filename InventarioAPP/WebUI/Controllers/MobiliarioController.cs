@@ -91,7 +91,9 @@ namespace WebUI.Controllers
         // GET: Mobiliario/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            ClassMobiliario Logica = new ClassMobiliario();
+            var Info = (List<Mobiliario>)Logica.BuscaMobiliarioPorId(id);
+            return View(Info[0]);
         }
 
         // POST: Mobiliario/Delete/5

@@ -89,7 +89,9 @@ namespace WebUI.Controllers
         // GET: Categoria/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            ClassCategoria Logica = new ClassCategoria();
+            var Info = (List<Categoria>)Logica.BuscarCategoriaPorId(id);
+            return View(Info[0]);
         }
 
         // POST: Categoria/Delete/5
@@ -107,7 +109,7 @@ namespace WebUI.Controllers
             }
             catch
             {
-                return View();
+                return View("ERROR");
             }
         }
     }

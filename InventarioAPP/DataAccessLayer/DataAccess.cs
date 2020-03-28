@@ -19,7 +19,7 @@ namespace DataAccessLayer
         #region builder
         public DataAccess()
         {
-            sCadena = "Data Source = CHANG-PC; Initial Catalog = inventarioDB; User ID = sa; Password = database;";
+            sCadena = "Data Source = QQUIROA; Initial Catalog = inventarioDB; User ID = sa; Password = database;";
             cn = new SqlConnection(sCadena);
         }
         #endregion
