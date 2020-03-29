@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table col-md-12">
     <tr>
         <th>
             @Html.DisplayName("Estado del Mobiliario")
@@ -39,15 +39,27 @@
     </tr>
 
 @foreach (var item in Model) {
+
+    //SE PUEDE MEJORAR PROFUNDIZANDO MAS EN LINQ ****PENDIENTE****
+    BusinessLogicLayer.ClassTipoMobiliario tm = new BusinessLogicLayer.ClassTipoMobiliario();
+    BusinessLogicLayer.ClassUbicacion ub = new BusinessLogicLayer.ClassUbicacion();
+    var infoTM = (List<Models.Tipomobiliario>)tm.BuscarTipoMobiliarioPorId(Convert.ToInt32(item.TipomobiliarioId));
+    var infoUB = (List<Models.Ubicacion>)ub.BuscarUbicacionPorId(Convert.ToInt32(item.UbicacionId));
+    var TipoMob = infoTM[0].descripcion;
+    var Ubicacion = infoUB[0].nombre_ubicacion;
+
+    string estado = "Inactivo";
+    if (item.EstadomobiliarioId == 1)
+    { estado = "Activo"; }
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.EstadomobiliarioId)
+            @Html.DisplayFor(modelItem => estado)
+        </td>
+        <td> 
+            @Html.DisplayFor(modelItem => TipoMob)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TipomobiliarioId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UbicacionId)
+            @Html.DisplayFor(modelItem => Ubicacion)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.descripcion_mobiliario)
