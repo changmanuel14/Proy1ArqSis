@@ -204,6 +204,7 @@
     <Content Include="Views\Empleado\Delete.cshtml" />
     <Content Include="Views\Empleado\Edit.cshtml" />
     <Content Include="Views\Mobiliario\Create.cshtml" />
+    <Content Include="Views\Mobiliario\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

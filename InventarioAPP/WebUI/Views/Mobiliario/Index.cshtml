@@ -43,17 +43,19 @@
     //SE PUEDE MEJORAR PROFUNDIZANDO MAS EN LINQ ****PENDIENTE****
     BusinessLogicLayer.ClassTipoMobiliario tm = new BusinessLogicLayer.ClassTipoMobiliario();
     BusinessLogicLayer.ClassUbicacion ub = new BusinessLogicLayer.ClassUbicacion();
+    BusinessLogicLayer.ClassEstadoMobiliario mob = new BusinessLogicLayer.ClassEstadoMobiliario();
+
     var infoTM = (List<Models.Tipomobiliario>)tm.BuscarTipoMobiliarioPorId(Convert.ToInt32(item.TipomobiliarioId));
     var infoUB = (List<Models.Ubicacion>)ub.BuscarUbicacionPorId(Convert.ToInt32(item.UbicacionId));
+    var infoEM = (List<Models.Estadomobiliario>)mob.BuscaEstadoMobiliarioPorId(Convert.ToInt32(item.EstadomobiliarioId));
+
     var TipoMob = infoTM[0].descripcion;
     var Ubicacion = infoUB[0].nombre_ubicacion;
+    var EstadoMobiliario = infoEM[0].descripcion_estado;
 
-    string estado = "Inactivo";
-    if (item.EstadomobiliarioId == 1)
-    { estado = "Activo"; }
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => estado)
+            @Html.DisplayFor(modelItem => EstadoMobiliario)
         </td>
         <td> 
             @Html.DisplayFor(modelItem => TipoMob)

@@ -16,5 +16,11 @@ namespace BusinessLogicLayer
             RepositorioGenerico<Estadomobiliario> REP = new RepositorioGenerico<Estadomobiliario>();
             return REP.ListarTodo();
         }//fin listar estado mobiliario
+
+        public IEnumerable BuscaEstadoMobiliarioPorId(int id)
+        {
+            RepositorioGenerico<Estadomobiliario> REP = new RepositorioGenerico<Estadomobiliario>();
+            return REP.ListarConFiltro(x => x.EstadomobiliarioId == id).ToList();
+        }//fin BuscaEdificio
     }
 }
