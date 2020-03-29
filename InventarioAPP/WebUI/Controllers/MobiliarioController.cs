@@ -29,9 +29,14 @@ namespace WebUI.Controllers
         // GET: Mobiliario/Create
         public ActionResult Create()
         {
-            ClassTipoMobiliario lista = new ClassTipoMobiliario();
-            var Info = lista.ListarTipoMobiliario();
-            ViewBag.TipoMobiliario = new SelectList(Info, "TipomobiliarioId", "descripcion");
+            ClassTipoMobiliario listaTM = new ClassTipoMobiliario();
+            ClassUbicacion listaU = new ClassUbicacion();
+            //obtenenmos los datos para llenar los DropDown
+            var InfoTM = listaTM.ListarTipoMobiliario();
+            var InfoU = listaU.ListarUbicaciones();
+            //Pasamos la lista de datos a la variable dinamica ViewBag
+            ViewBag.TipoMobiliario = new SelectList(InfoTM, "TipomobiliarioId", "descripcion");
+            ViewBag.Ubicaciones = new SelectList(InfoU, "UbicacionId", "nombre_ubicacion");
             return View();
         }
 
@@ -43,9 +48,9 @@ namespace WebUI.Controllers
             {
                 // TODO: Add insert logic here
                 ClassMobiliario Logica = new ClassMobiliario();
-                string respuesta = Logica.NuevoMobiliario(Convert.ToInt32(collection["EstadomobiliarioId"]), 
-                    Convert.ToInt32(collection["TipomobiliarioId"]), Convert.ToInt32(collection["UbicacionId"]), 
-                    collection["descripcion_mobiliario"], collection["numero_serie"], collection["observacion"]);
+                string respuesta = Logica.NuevoMobiliario(Convert.ToInt32(collection["TipomobiliarioId"]), 
+                    Convert.ToInt32(collection["UbicacionId"]),collection["descripcion_mobiliario"], 
+                    collection["numero_serie"], collection["observacion"]);
                 return RedirectToAction("Index");
             }
             catch

@@ -29,7 +29,7 @@ namespace BusinessLogicLayer
             return REP.ListarConFiltro(x => x.MobiliarioId == id).ToList();
         }//fin BuscaEdificio
 
-        public string NuevoMobiliario(int EstadoMobiliarioID, int TipoMobiliarioID, 
+        public string NuevoMobiliario(int TipoMobiliarioID, 
             int UbicacionID, string descripcion, string numeroS, string observacion)
         {
             RepositorioGenerico<Mobiliario> REP = new RepositorioGenerico<Mobiliario>();
@@ -42,7 +42,7 @@ namespace BusinessLogicLayer
                 else
                 {
                     Mobiliario MB = new Mobiliario();
-                    MB.EstadomobiliarioId = EstadoMobiliarioID;
+                    MB.EstadomobiliarioId = 1;
                     MB.TipomobiliarioId = TipoMobiliarioID;
                     MB.UbicacionId = UbicacionID;
                     MB.descripcion_mobiliario = descripcion;
