@@ -196,15 +196,14 @@
     <Content Include="Views\Ubicacion\Edit.cshtml" />
     <Content Include="Views\Ubicacion\Create.cshtml" />
     <Content Include="Views\Mobiliario\Index.cshtml" />
-    <Content Include="Views\Mobiliario\Create.cshtml" />
     <Content Include="Views\Mobiliario\Details.cshtml" />
-    <Content Include="Views\Mobiliario\Edit.cshtml" />
     <Content Include="Views\Mobiliario\Delete.cshtml" />
     <Content Include="Views\Empleado\Index.cshtml" />
     <Content Include="Views\Empleado\Create.cshtml" />
     <Content Include="Views\Empleado\Details.cshtml" />
     <Content Include="Views\Empleado\Delete.cshtml" />
     <Content Include="Views\Empleado\Edit.cshtml" />
+    <Content Include="Views\Mobiliario\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

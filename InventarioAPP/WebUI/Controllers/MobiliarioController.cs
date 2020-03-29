@@ -29,6 +29,9 @@ namespace WebUI.Controllers
         // GET: Mobiliario/Create
         public ActionResult Create()
         {
+            ClassTipoMobiliario lista = new ClassTipoMobiliario();
+            var Info = lista.ListarTipoMobiliario();
+            ViewBag.TipoMobiliario = new SelectList(Info, "TipomobiliarioId", "descripcion");
             return View();
         }
 
