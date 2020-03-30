@@ -3,54 +3,65 @@
 @{
     ViewBag.Title = "Delete";
 }
+<section class="content-header">
+    <h2>Eliminar</h2>
+    <h3>¿Está seguro de eliminar el registro?</h3>
+</section>
 
-<h2>Delete</h2>
+<section class="content">
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Ubicacion</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.EdificioId)
-        </dt>
+    <div class="box">
+        <div class="box-body">
+            <div>
+                <h4>Ubicación</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.EdificioId)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EdificioId)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.EdificioId)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.nombre_ubicacion)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.nombre_ubicacion)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.nombre_ubicacion)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.nombre_ubicacion)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.observacion)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.observacion)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.observacion)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.observacion)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.estado_ubicacion)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.estado_ubicacion)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.estado_ubicacion)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.estado_ubicacion)
+                    </dd>
 
-    </dl>
+                </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                }
+            </div>
+
         </div>
-    }
-</div>
+    </div>
+
+</section>

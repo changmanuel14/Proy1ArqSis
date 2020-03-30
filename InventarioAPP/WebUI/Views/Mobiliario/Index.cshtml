@@ -3,94 +3,104 @@
 @{
     ViewBag.Title = "Index";
 }
+<section class="content-header">
+    <h2>Mobiliario</h2>
+</section>
 
-<h2>Index</h2>
+<section class="content">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table col-md-12">
-    <tr>
-        <th>
-            @Html.DisplayName("Número de Serie")
-        </th>
-        <th>
-            @Html.DisplayName("Descripción")
-        </th>
-        <th>
-            @Html.DisplayName("Tipo")
-        </th>
-        <th>
-            @Html.DisplayName("Ubicacion")
-        </th>
-        <th>
-            @Html.DisplayName("Observación")
-        </th>
-        <th>
-            @Html.DisplayName("Estado")
-        </th>
-        <th>
-            @Html.DisplayName("Fecha de Creación")
-        </th>
-        <th>
-            @Html.DisplayName("Fecha de Baja")
-        </th>
-        <th></th>
-    </tr>
+    <div class="box">
+        <div class="box-body">
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table col-md-12">
+                <tr>
+                    <th>
+                        @Html.DisplayName("Número de Serie")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Descripción")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Tipo")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Ubicacion")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Observación")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Estado")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Fecha de Creación")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Fecha de Baja")
+                    </th>
+                    <th></th>
+                </tr>
 
-@foreach (var item in Model) {
+                @foreach (var item in Model)
+                {
 
-    //SE PUEDE MEJORAR PROFUNDIZANDO MAS EN LINQ ****PENDIENTE****
-    BusinessLogicLayer.ClassTipoMobiliario tm = new BusinessLogicLayer.ClassTipoMobiliario();
-    BusinessLogicLayer.ClassUbicacion ub = new BusinessLogicLayer.ClassUbicacion();
-    BusinessLogicLayer.ClassEstadoMobiliario mob = new BusinessLogicLayer.ClassEstadoMobiliario();
+                    //SE PUEDE MEJORAR PROFUNDIZANDO MAS EN LINQ ****PENDIENTE****
+                    BusinessLogicLayer.ClassTipoMobiliario tm = new BusinessLogicLayer.ClassTipoMobiliario();
+                    BusinessLogicLayer.ClassUbicacion ub = new BusinessLogicLayer.ClassUbicacion();
+                    BusinessLogicLayer.ClassEstadoMobiliario mob = new BusinessLogicLayer.ClassEstadoMobiliario();
 
-    var infoTM = (List<Models.Tipomobiliario>)tm.BuscarTipoMobiliarioPorId(Convert.ToInt32(item.TipomobiliarioId));
-    var infoUB = (List<Models.Ubicacion>)ub.BuscarUbicacionPorId(Convert.ToInt32(item.UbicacionId));
-    var infoEM = (List<Models.Estadomobiliario>)mob.BuscaEstadoMobiliarioPorId(Convert.ToInt32(item.EstadomobiliarioId));
+                    var infoTM = (List<Models.Tipomobiliario>)tm.BuscarTipoMobiliarioPorId(Convert.ToInt32(item.TipomobiliarioId));
+                    var infoUB = (List<Models.Ubicacion>)ub.BuscarUbicacionPorId(Convert.ToInt32(item.UbicacionId));
+                    var infoEM = (List<Models.Estadomobiliario>)mob.BuscaEstadoMobiliarioPorId(Convert.ToInt32(item.EstadomobiliarioId));
 
-    var TipoMob = infoTM[0].descripcion;
-    var Ubicacion = infoUB[0].nombre_ubicacion;
-    var EstadoMobiliario = infoEM[0].descripcion_estado;
+                    var TipoMob = infoTM[0].descripcion;
+                    var Ubicacion = infoUB[0].nombre_ubicacion;
+                    var EstadoMobiliario = infoEM[0].descripcion_estado;
 
-    var baja = "";
-    if (item.fecha_baja == null)
-    { baja = "-"; }
-    else
-    { baja = Convert.ToDateTime(item.fecha_baja).ToString("dd/MM/yyyy"); }
-    var creacion = Convert.ToDateTime(item.fecha_creacion).ToString("dd/MM/yyyy");
+                    var baja = "";
+                    if (item.fecha_baja == null)
+                    { baja = "-"; }
+                    else
+                    { baja = Convert.ToDateTime(item.fecha_baja).ToString("dd/MM/yyyy"); }
+                    var creacion = Convert.ToDateTime(item.fecha_creacion).ToString("dd/MM/yyyy");
 
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.numero_serie)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.descripcion_mobiliario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => TipoMob)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => Ubicacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.observacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => EstadoMobiliario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => creacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => baja)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.MobiliarioId }) |
-            @Html.ActionLink("Details", "Details", new { name = item.numero_serie }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.MobiliarioId })
-        </td>
-    </tr>
-}
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.numero_serie)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.descripcion_mobiliario)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => TipoMob)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Ubicacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.observacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => EstadoMobiliario)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => creacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => baja)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.MobiliarioId }) |
+                            @Html.ActionLink("Details", "Details", new { name = item.numero_serie }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.MobiliarioId })
+                        </td>
+                    </tr>
+                }
 
-</table>
+            </table>
+        </div>
+    </div>
+
+</section>

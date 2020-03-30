@@ -3,37 +3,48 @@
 @{
     ViewBag.Title = "Details";
 }
+<section class="content-header">
+    <h2>Detalles</h2>
+</section>
 
-<h2>Details</h2>
+<section class="content">
 
-<div>
-    <h4>Categoría</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        @{ var creacion = Convert.ToDateTime(Model.fecha_creacion).ToString("dd/MM/yyyy"); }
-        <dt>
-            @Html.DisplayName("Nombre")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.nombre_categoria)
-        </dd>
+    <div class="box">
+        <div class="box-body">
+            <div>
+                <h4>Categoría</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    @{ var creacion = Convert.ToDateTime(Model.fecha_creacion).ToString("dd/MM/yyyy"); }
+                    <dt>
+                        @Html.DisplayName("Nombre")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.nombre_categoria)
+                    </dd>
 
-        <dt>
-            @Html.DisplayName("Fecha de Creación")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => creacion)
-        </dd>
+                    <dt>
+                        @Html.DisplayName("Fecha de Creación")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => creacion)
+                    </dd>
 
-        <dt>
-            @Html.DisplayName("Estado")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.estado_categoria)
-        </dd>
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CategoriaId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                    <dt>
+                        @Html.DisplayName("Estado")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.estado_categoria)
+                    </dd>
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.CategoriaId }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+
+
+        </div>
+    </div>
+
+</section>

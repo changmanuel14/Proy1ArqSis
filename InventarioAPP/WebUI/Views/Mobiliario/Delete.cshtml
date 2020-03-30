@@ -3,98 +3,110 @@
 @{
     ViewBag.Title = "Delete";
 }
+<section class="content-header">
+    <h2>Eliminar</h2>
+    <h3>¿Está seguro de eliminar el registro?</h3>
+</section>
 
-<h2>Delete</h2>
+<section class="content">
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Mobiliario</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        @{
-            BusinessLogicLayer.ClassTipoMobiliario tm = new BusinessLogicLayer.ClassTipoMobiliario();
-            BusinessLogicLayer.ClassUbicacion ub = new BusinessLogicLayer.ClassUbicacion();
-            BusinessLogicLayer.ClassEstadoMobiliario mob = new BusinessLogicLayer.ClassEstadoMobiliario();
+    <div class="box">
+        <div class="box-body">
+            <div>
+                <h4>Mobiliario</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    @{
+                        BusinessLogicLayer.ClassTipoMobiliario tm = new BusinessLogicLayer.ClassTipoMobiliario();
+                        BusinessLogicLayer.ClassUbicacion ub = new BusinessLogicLayer.ClassUbicacion();
+                        BusinessLogicLayer.ClassEstadoMobiliario mob = new BusinessLogicLayer.ClassEstadoMobiliario();
 
-            var infoTM = (List<Models.Tipomobiliario>)tm.BuscarTipoMobiliarioPorId(Convert.ToInt32(Model.TipomobiliarioId));
-            var infoUB = (List<Models.Ubicacion>)ub.BuscarUbicacionPorId(Convert.ToInt32(Model.UbicacionId));
-            var infoEM = (List<Models.Estadomobiliario>)mob.BuscaEstadoMobiliarioPorId(Convert.ToInt32(Model.EstadomobiliarioId));
+                        var infoTM = (List<Models.Tipomobiliario>)tm.BuscarTipoMobiliarioPorId(Convert.ToInt32(Model.TipomobiliarioId));
+                        var infoUB = (List<Models.Ubicacion>)ub.BuscarUbicacionPorId(Convert.ToInt32(Model.UbicacionId));
+                        var infoEM = (List<Models.Estadomobiliario>)mob.BuscaEstadoMobiliarioPorId(Convert.ToInt32(Model.EstadomobiliarioId));
 
-            var TipoMob = infoTM[0].descripcion;
-            var Ubicacion = infoUB[0].nombre_ubicacion;
-            var EstadoMobiliario = infoEM[0].descripcion_estado;
+                        var TipoMob = infoTM[0].descripcion;
+                        var Ubicacion = infoUB[0].nombre_ubicacion;
+                        var EstadoMobiliario = infoEM[0].descripcion_estado;
 
-            var baja = "";
-            if (Model.fecha_baja == null)
-            { baja = "-"; }
-            else
-            { baja = Convert.ToDateTime(Model.fecha_baja).ToString("dd/MM/yyyy"); }
-            var creacion = Convert.ToDateTime(Model.fecha_creacion).ToString("dd/MM/yyyy");
-        }
-        <dt>
-            @Html.DisplayName("Número de Serie")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.numero_serie)
-        </dd>
+                        var baja = "";
+                        if (Model.fecha_baja == null)
+                        { baja = "-"; }
+                        else
+                        { baja = Convert.ToDateTime(Model.fecha_baja).ToString("dd/MM/yyyy"); }
+                        var creacion = Convert.ToDateTime(Model.fecha_creacion).ToString("dd/MM/yyyy");
+                    }
+                    <dt>
+                        @Html.DisplayName("Número de Serie")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.numero_serie)
+                    </dd>
 
-        <dt>
-            @Html.DisplayName("Descripción")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.descripcion_mobiliario)
-        </dd>
+                    <dt>
+                        @Html.DisplayName("Descripción")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.descripcion_mobiliario)
+                    </dd>
 
-        <dt>
-            @Html.DisplayName("Tipo")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => TipoMob)
-        </dd>
+                    <dt>
+                        @Html.DisplayName("Tipo")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => TipoMob)
+                    </dd>
 
-        <dt>
-            @Html.DisplayName("Ubicación")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => Ubicacion)
-        </dd>
+                    <dt>
+                        @Html.DisplayName("Ubicación")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => Ubicacion)
+                    </dd>
 
-        <dt>
-            @Html.DisplayName("Observación")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.observacion)
-        </dd>
+                    <dt>
+                        @Html.DisplayName("Observación")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.observacion)
+                    </dd>
 
-        <dt>
-            @Html.DisplayName("Estado")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => EstadoMobiliario)
-        </dd>
+                    <dt>
+                        @Html.DisplayName("Estado")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => EstadoMobiliario)
+                    </dd>
 
-        <dt>
-            @Html.DisplayName("Fecha de Creación")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => creacion)
-        </dd>
+                    <dt>
+                        @Html.DisplayName("Fecha de Creación")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => creacion)
+                    </dd>
 
-        <dt>
-            @Html.DisplayName("Fecha de Baja")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => baja)
-        </dd>
+                    <dt>
+                        @Html.DisplayName("Fecha de Baja")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => baja)
+                    </dd>
 
-    </dl>
+                </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                }
+            </div>
+
+
         </div>
-    }
-</div>
+    </div>
+
+</section>

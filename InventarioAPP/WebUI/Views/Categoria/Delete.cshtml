@@ -3,43 +3,56 @@
 @{
     ViewBag.Title = "Delete";
 }
+<section class="content-header">
+    <h2>Eliminar</h2>
+    <h3>¿Está seguro de eliminar el registro?</h3>
+</section>
 
-<h2>Delete</h2>
+<section class="content">
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Categoría</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        @{ var creacion = Convert.ToDateTime(Model.fecha_creacion).ToString("dd/MM/yyyy"); }
-        <dt>
-            @Html.DisplayName("Nombre")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.nombre_categoria)
-        </dd>
+    <div class="box">
+        <div class="box-body">
+            <div>
+                <h4>Categoría</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    @{ var creacion = Convert.ToDateTime(Model.fecha_creacion).ToString("dd/MM/yyyy"); }
+                    <dt>
+                        @Html.DisplayName("Nombre")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.nombre_categoria)
+                    </dd>
 
-        <dt>
-            @Html.DisplayName("Fecha de Creación")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => creacion)
-        </dd>
+                    <dt>
+                        @Html.DisplayName("Fecha de Creación")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => creacion)
+                    </dd>
 
-        <dt>
-            @Html.DisplayName("Estado")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.estado_categoria)
-        </dd>
-    </dl>
+                    <dt>
+                        @Html.DisplayName("Estado")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.estado_categoria)
+                    </dd>
+                </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                }
+            </div>
+
+
         </div>
-    }
-</div>
+    </div>
+
+</section>
+

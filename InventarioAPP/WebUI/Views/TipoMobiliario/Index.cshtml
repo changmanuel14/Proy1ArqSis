@@ -3,49 +3,60 @@
 @{
     ViewBag.Title = "Index";
 }
+<section class="content-header">
+    <h2>Tipo de Mobiliario</h2>
+</section>
 
-<h2>Index</h2>
+<section class="content">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoriaId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.control_serie)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.estado_tipomobiliario)
-        </th>
-        <th></th>
-    </tr>
+    <div class="box">
+        <div class="box-body">
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CategoriaId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.descripcion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.control_serie)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.estado_tipomobiliario)
+                    </th>
+                    <th></th>
+                </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CategoriaId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.control_serie)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.estado_tipomobiliario)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TipomobiliarioId }) |
-            @Html.ActionLink("Details", "Details", new { name = item.descripcion }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TipomobiliarioId })
-        </td>
-    </tr>
-}
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoriaId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.control_serie)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.estado_tipomobiliario)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.TipomobiliarioId }) |
+                            @Html.ActionLink("Details", "Details", new { name = item.descripcion }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.TipomobiliarioId })
+                        </td>
+                    </tr>
+                }
 
-</table>
+            </table>
+
+        </div>
+    </div>
+
+</section>

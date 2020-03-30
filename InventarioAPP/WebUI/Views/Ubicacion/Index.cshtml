@@ -3,49 +3,60 @@
 @{
     ViewBag.Title = "Index";
 }
+<section class="content-header">
+    <h2>Ubicación</h2>
+</section>
 
-<h2>Index</h2>
+<section class="content">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.EdificioId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre_ubicacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.observacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.estado_ubicacion)
-        </th>
-        <th></th>
-    </tr>
+    <div class="box">
+        <div class="box-body">
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EdificioId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.nombre_ubicacion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.observacion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.estado_ubicacion)
+                    </th>
+                    <th></th>
+                </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.EdificioId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre_ubicacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.observacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.estado_ubicacion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UbicacionId }) |
-            @Html.ActionLink("Details", "Details", new { name = item.nombre_ubicacion }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UbicacionId })
-        </td>
-    </tr>
-}
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EdificioId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nombre_ubicacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.observacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.estado_ubicacion)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.UbicacionId }) |
+                            @Html.ActionLink("Details", "Details", new { name = item.nombre_ubicacion }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.UbicacionId })
+                        </td>
+                    </tr>
+                }
 
-</table>
+            </table>
+
+        </div>
+    </div>
+
+</section>

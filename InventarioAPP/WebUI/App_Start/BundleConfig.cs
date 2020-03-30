@@ -34,7 +34,9 @@ namespace WebUI
                       "~/assets/css/AdminLTE*",
                       "~/assets/css/bootstrap*",
                       "~/assets/css/skins/_all-skins*",
-                      "~/assets/css/skins/skin-*"));
+                      "~/assets/css/skins/skin-*",
+                      "~/assets/plugins/iCheck/icheck*",
+                      "~/assets/plugins/iCheck/all.css"));
         }
     }
 }
