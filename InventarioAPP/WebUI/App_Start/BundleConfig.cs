@@ -22,9 +22,19 @@ namespace WebUI
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/vendor/scripts").Include(
+                      "~/assets/js/app*",
+                      "~/assets/js/bootstrap*",
+                      "~/assets/js/demo.js",
+                      "~/assets/js/npm.js",
+                      "~/assets/js/pages/dashboard*"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/assets/css/AdminLTE*",
+                      "~/assets/css/bootstrap*",
+                      "~/assets/css/skins/_all-skins*",
+                      "~/assets/css/skins/skin-*"));
         }
     }
 }

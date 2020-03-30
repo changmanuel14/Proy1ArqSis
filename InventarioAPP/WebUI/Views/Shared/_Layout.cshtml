@@ -1,45 +1,75 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<body class="skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <a href="#" class="logo">
+                <span class="logo-mini"><b>I-</b>APP</span>
+                <span class="logo-lg"><b>Inventario</b>APP</span>
+            </a>
+
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Categoria", "Index", "Categoria")</li>
-                    <li>@Html.ActionLink("Mobiliario", "Index", "Mobiliario")</li>
-                    <li>@Html.ActionLink("Tipo de Mobiliario", "Index", "TipoMobiliario")</li>
-                    <li>@Html.ActionLink("Edificio", "Index", "Edificio")</li>
-                    <li>@Html.ActionLink("Ubicacion", "Index", "Ubicacion")</li>
+                </a>
+            </nav>
+        </header>
+
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="header">MENÚ</li>
+
+                    <!--li class="treeview"> ESTE ES POR SI NECESITAMOS UN DROPDOWN, TOMAR COMO EJEMPLO
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+        </ul>
+    </ li-->
+
+                    <li>@Html.ActionLink("  Categoria", "Index", "Categoria", new { area = "" }, new { @class = "fa fa-book" })</li>
+                    <li>@Html.ActionLink("  Mobiliario", "Index", "Mobiliario", new { area = "" }, new { @class = "fa fa-book" })</li>
+                    <li>@Html.ActionLink("  Tipo de Mobiliario", "Index", "TipoMobiliario", new { area = "" }, new { @class = "fa  fa-align-justify" })</li>
+                    <li>@Html.ActionLink("  Edificio", "Index", "Edificio", new { area = "" }, new { @class = "fa fa-building" })</li>
+                    <li>@Html.ActionLink("  Ubicacion", "Index", "Ubicacion", new { area = "" }, new { @class = "fa fa-map-marker" })</li>
                 </ul>
-            </div>
+            </section>
+        </aside>
+
+        <div class="content-wrapper">
+            @RenderBody()
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                Arquitectura de Sistemas II <br />
+                Proyecto 1
+            </div>
+            <strong>Mata Quiroa, Jesús Enrique - 201708008<br />Chang Pérez, Manuel Alejandro - 2017080039</strong>
         </footer>
+
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/vendor/scripts")
     @RenderSection("scripts", required: false)
 </body>
 </html>
