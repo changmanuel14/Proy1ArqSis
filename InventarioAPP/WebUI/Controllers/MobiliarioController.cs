@@ -64,6 +64,19 @@ namespace WebUI.Controllers
         {
             ClassMobiliario Lg = new ClassMobiliario();
             var info = (List<Mobiliario>)Lg.BuscaMobiliarioPorId(id);
+
+            ClassTipoMobiliario listaTM = new ClassTipoMobiliario();
+            ClassUbicacion listaU = new ClassUbicacion();
+            ClassEstadoMobiliario listaEM = new ClassEstadoMobiliario();
+            //obtenenmos los datos para llenar los DropDown
+            var InfoTM = listaTM.ListarTipoMobiliario();
+            var InfoU = listaU.ListarUbicaciones();
+            var InfoEM = listaEM.ListarEstadoMobiliario();
+            //Pasamos la lista de datos a la variable dinamica ViewBag
+            ViewBag.TipoMobiliario = new SelectList(InfoTM, "TipomobiliarioId", "descripcion");
+            ViewBag.Ubicaciones = new SelectList(InfoU, "UbicacionId", "nombre_ubicacion");
+            ViewBag.EstadoMobiliario = new SelectList(InfoEM, "EstadomobiliarioId", "descripcion_estado");
+
             return View(info[0]);
         }
 
@@ -83,7 +96,10 @@ namespace WebUI.Controllers
                 Mob.descripcion_mobiliario = collection["descripcion_mobiliario"];
                 Mob.fecha_creacion = Convert.ToDateTime(collection["fecha_creacion"]);
                 Mob.numero_serie = collection["numero_serie"];
-                Mob.fecha_baja = Convert.ToDateTime(collection["fecha_baja"]);
+                if (collection["fecha_baja"].ToString() == string.Empty)
+                    Mob.fecha_baja = null;
+                else
+                    Mob.fecha_baja = Convert.ToDateTime(collection["fecha_baja"]);
                 Mob.observacion = collection["observacion"];
                 Logica.EditarMobiliario(Mob);
 

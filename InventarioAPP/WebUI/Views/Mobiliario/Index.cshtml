@@ -12,28 +12,28 @@
 <table class="table col-md-12">
     <tr>
         <th>
-            @Html.DisplayName("Estado del Mobiliario")
-        </th>
-        <th>
-            @Html.DisplayName("Tipo de Mobiliario")
-        </th>
-        <th>
-            @Html.DisplayName("Ubicacion")
+            @Html.DisplayName("Número de Serie")
         </th>
         <th>
             @Html.DisplayName("Descripción")
         </th>
         <th>
-            @Html.DisplayName("Fecha de Creación")
+            @Html.DisplayName("Tipo")
         </th>
         <th>
-            @Html.DisplayName("Número de Serie")
-        </th>
-        <th>
-            @Html.DisplayName("Fecha de Baja")
+            @Html.DisplayName("Ubicacion")
         </th>
         <th>
             @Html.DisplayName("Observación")
+        </th>
+        <th>
+            @Html.DisplayName("Estado")
+        </th>
+        <th>
+            @Html.DisplayName("Fecha de Creación")
+        </th>
+        <th>
+            @Html.DisplayName("Fecha de Baja")
         </th>
         <th></th>
     </tr>
@@ -53,35 +53,42 @@
     var Ubicacion = infoUB[0].nombre_ubicacion;
     var EstadoMobiliario = infoEM[0].descripcion_estado;
 
+    var baja = "";
+    if (item.fecha_baja == null)
+    { baja = "-"; }
+    else
+    { baja = Convert.ToDateTime(item.fecha_baja).ToString("dd/MM/yyyy"); }
+    var creacion = Convert.ToDateTime(item.fecha_creacion).ToString("dd/MM/yyyy");
+
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => EstadoMobiliario)
+            @Html.DisplayFor(modelItem => item.numero_serie)
         </td>
-        <td> 
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion_mobiliario)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => TipoMob)
         </td>
         <td>
             @Html.DisplayFor(modelItem => Ubicacion)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.descripcion_mobiliario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha_creacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.numero_serie)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha_baja)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.observacion)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MobiliarioId }) |
-            @Html.ActionLink("Details", "Details", new { name = item.numero_serie}) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MobiliarioId })
+            @Html.DisplayFor(modelItem => EstadoMobiliario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => creacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => baja)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.MobiliarioId }) |
+            @Html.ActionLink("Details", "Details", new { name = item.numero_serie }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MobiliarioId })
         </td>
     </tr>
 }
