@@ -7,33 +7,30 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Categoria</h4>
+    <h4>Categoría</h4>
     <hr />
     <dl class="dl-horizontal">
+        @{ var creacion = Convert.ToDateTime(Model.fecha_creacion).ToString("dd/MM/yyyy"); }
         <dt>
-            @Html.DisplayNameFor(model => model.nombre_categoria)
+            @Html.DisplayName("Nombre")
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.nombre_categoria)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.fecha_creacion)
+            @Html.DisplayName("Fecha de Creación")
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.fecha_creacion)
+            @Html.DisplayFor(model => creacion)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.estado_categoria)
+            @Html.DisplayName("Estado")
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.estado_categoria)
         </dd>
-
     </dl>
 </div>
 <p>
