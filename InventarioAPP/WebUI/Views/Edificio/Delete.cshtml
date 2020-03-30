@@ -12,29 +12,25 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.nombre_edificio)
+            @Html.DisplayName("Nombre")
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.nombre_edificio)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.observacion)
+            @Html.DisplayName("Observación")
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.observacion)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.estado_edificio)
+            @Html.DisplayName("Estado")
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.estado_edificio)
         </dd>
-
     </dl>
 
     @using (Html.BeginForm()) {
