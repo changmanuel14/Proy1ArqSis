@@ -22,15 +22,16 @@
                     @Html.HiddenFor(model => model.TipomobiliarioId)
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.CategoriaId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.Label("Categoria", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-4">
-                            @Html.EditorFor(model => model.CategoriaId, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.DropDownListFor(model => model.CategoriaId, (SelectList)ViewBag.Categoria,
+                                           "Seleccione Categoria", htmlAttributes: new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.CategoriaId, "", new { @class = "text-danger" })
-                        </div>
+                                    </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.Label("Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-4">
                             @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
@@ -38,7 +39,7 @@
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.control_serie, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.Label("Número de Serie", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-4">
                             @Html.EditorFor(model => model.control_serie, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.control_serie, "", new { @class = "text-danger" })
@@ -46,7 +47,7 @@
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.estado_tipomobiliario, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.Label("Estado", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-4">
                             <div class="checkbox">
                                 @Html.EditorFor(model => model.estado_tipomobiliario)
@@ -64,7 +65,7 @@
             }
 
             <div>
-                @Html.ActionLink("Back to List", "Index")
+                @Html.ActionLink("Regresar", "Index")
             </div>
 
 

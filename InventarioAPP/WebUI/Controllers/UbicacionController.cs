@@ -29,6 +29,9 @@ namespace WebUI.Controllers
         // GET: Ubicacion/Create
         public ActionResult Create()
         {
+            ClassEdificio ListaE = new ClassEdificio();
+            var InfoE = ListaE.ListarEdificios();
+            ViewBag.Edificio = new SelectList(InfoE, "EdificioId", "nombre_edificio");
             return View();
         }
 
@@ -53,6 +56,9 @@ namespace WebUI.Controllers
         public ActionResult Edit(int id)
         {
             ClassUbicacion Lg = new ClassUbicacion();
+            ClassEdificio ListaE = new ClassEdificio();
+            var InfoE = ListaE.ListarEdificios();
+            ViewBag.Edificio = new SelectList(InfoE, "EdificioId", "nombre_edificio");
             var info = (List<Ubicacion>)Lg.BuscarUbicacionPorId(id);
             return View(info[0]);
         }

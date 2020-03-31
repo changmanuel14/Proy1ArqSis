@@ -29,6 +29,9 @@ namespace WebUI.Controllers
         // GET: Categoria/Create
         public ActionResult Create()
         {
+            ClassCategoria ListaC = new ClassCategoria();
+            var InfoC = ListaC.ListarCategorias();
+            ViewBag.Categoria = new SelectList(InfoC, "CategoriaId", "nombre_categoria");
             return View();
         }
 
@@ -52,6 +55,9 @@ namespace WebUI.Controllers
         // GET: Categoria/Edit/5
         public ActionResult Edit(int id)
         {
+            ClassCategoria ListaC = new ClassCategoria();
+            var InfoC = ListaC.ListarCategorias();
+            ViewBag.Categoria = new SelectList(InfoC, "CategoriaId", "nombre_categoria");
             ClassTipoMobiliario Lg = new ClassTipoMobiliario();
             var info = (List<Tipomobiliario>)Lg.BuscarTipoMobiliarioPorId(id);
             return View(info[0]);
