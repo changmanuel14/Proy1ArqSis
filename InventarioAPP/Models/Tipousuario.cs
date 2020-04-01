@@ -12,20 +12,17 @@ namespace Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Ubicacion
+    public partial class Tipousuario
     {
-        public Ubicacion()
+        public Tipousuario()
         {
-            this.Mobiliario = new HashSet<Mobiliario>();
+            this.Usuario = new HashSet<Usuario>();
         }
     
-        public int UbicacionId { get; set; }
-        public Nullable<int> EdificioId { get; set; }
-        public string nombre_ubicacion { get; set; }
-        public string observacion { get; set; }
-        public bool estado_ubicacion { get; set; }
+        public int TipousuarioId { get; set; }
+        public string nombre { get; set; }
+        public string descripcion { get; set; }
     
-        public virtual Edificio Edificio { get; set; }
-        public virtual ICollection<Mobiliario> Mobiliario { get; set; }
+        public virtual ICollection<Usuario> Usuario { get; set; }
     }
 }

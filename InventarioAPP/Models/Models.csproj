@@ -43,6 +43,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,15 +84,15 @@
     <Compile Include="Tipomobiliario.cs">
       <DependentUpon>Model_Inventario.tt</DependentUpon>
     </Compile>
+    <Compile Include="Tipousuario.cs">
+      <DependentUpon>Model_Inventario.tt</DependentUpon>
+    </Compile>
     <Compile Include="Ubicacion.cs">
       <DependentUpon>Model_Inventario.tt</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Model_Inventario.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model_Inventario.cs</LastGenOutput>
-    </Content>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>Model_Inventario.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -97,6 +100,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model_Inventario.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model_Inventario.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

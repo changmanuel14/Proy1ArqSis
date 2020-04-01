@@ -34,5 +34,7 @@ namespace Models
         public virtual DbSet<Mobiliario> Mobiliario { get; set; }
         public virtual DbSet<Tipomobiliario> Tipomobiliario { get; set; }
         public virtual DbSet<Ubicacion> Ubicacion { get; set; }
+        public virtual DbSet<Tipousuario> Tipousuario { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
     }
 }
