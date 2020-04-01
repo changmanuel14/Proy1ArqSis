@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    class DataAccess
+    public class DataAccess
     {
         #region atributos
         private SqlConnection cn { get; set; }

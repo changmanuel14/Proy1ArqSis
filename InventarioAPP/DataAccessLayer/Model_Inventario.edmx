@@ -111,7 +111,7 @@
           </Key>
           <Property Name="UsuarioId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="userName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="password" Type="varbinary" MaxLength="150" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="280" />
           <Property Name="EmpleadoId" Type="int" Nullable="false" />
           <Property Name="TipousuarioId" Type="int" Nullable="false" />
         </EntityType>
@@ -565,7 +565,7 @@
           </Key>
           <Property Name="UsuarioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="userName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="password" Type="Binary" Nullable="false" MaxLength="150" FixedLength="false" />
+          <Property Name="password" Type="String" MaxLength="280" FixedLength="false" Unicode="false" />
           <Property Name="EmpleadoId" Type="Int32" Nullable="false" />
           <Property Name="TipousuarioId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Empleado" Relationship="inventarioDBModel.FK_Usuario_Empleado" FromRole="Usuario" ToRole="Empleado" />

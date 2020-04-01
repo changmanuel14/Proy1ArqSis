@@ -16,7 +16,7 @@ namespace Models
     {
         public int UsuarioId { get; set; }
         public string userName { get; set; }
-        public byte[] password { get; set; }
+        public string password { get; set; }
         public int EmpleadoId { get; set; }
         public int TipousuarioId { get; set; }
     

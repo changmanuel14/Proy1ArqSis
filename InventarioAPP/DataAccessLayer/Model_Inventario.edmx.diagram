@@ -23,7 +23,7 @@
         <AssociationConnector Association="inventarioDBModel.Relationship13" ManuallyRouted="false" />
         <AssociationConnector Association="inventarioDBModel.Relationship4" ManuallyRouted="false" />
         <EntityTypeShape EntityType="inventarioDBModel.Tipousuario" Width="1.5" PointX="5.125" PointY="6.75" />
-        <EntityTypeShape EntityType="inventarioDBModel.Usuario" Width="1.5" PointX="7.375" PointY="9.375" />
+        <EntityTypeShape EntityType="inventarioDBModel.Usuario" Width="1.5" PointX="7.375" PointY="8.375" />
         <AssociationConnector Association="inventarioDBModel.FK_Usuario_Empleado" />
         <AssociationConnector Association="inventarioDBModel.FK_Usuario_Tipousuario" />
       </Diagram>

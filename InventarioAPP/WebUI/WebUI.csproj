@@ -131,6 +131,7 @@
     <Compile Include="Controllers\EdificioController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MobiliarioController.cs" />
     <Compile Include="Controllers\TipoMobiliarioController.cs" />
     <Compile Include="Controllers\UbicacionController.cs" />
@@ -939,6 +940,7 @@
     <Content Include="Views\Empleado\Edit.cshtml" />
     <Content Include="Views\Mobiliario\Create.cshtml" />
     <Content Include="Views\Mobiliario\Edit.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

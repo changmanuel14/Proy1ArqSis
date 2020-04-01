@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@*if (User.Identity.IsAuthenticated)
+{*@
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -35,14 +37,14 @@
                     <li class="header">MENÚ</li>
 
                     <!--li class="treeview"> ESTE ES POR SI NECESITAMOS UN DROPDOWN, TOMAR COMO EJEMPLO
-        <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-        </ul>
-    </ li-->
+                        <a href="#">
+                            <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                        </ul>
+                    </ li-->
 
                     <li>@Html.ActionLink("  Categoria", "Index", "Categoria", new { area = "" }, new { @class = "fa fa-book" })</li>
                     <li>@Html.ActionLink("  Mobiliario", "Index", "Mobiliario", new { area = "" }, new { @class = "fa fa-book" })</li>
@@ -74,3 +76,8 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+@*}
+    else //Login
+    {
+    @RenderBody()
+    }*@

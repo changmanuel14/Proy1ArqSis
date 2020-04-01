@@ -57,7 +57,10 @@
     <Compile Include="ClassEstadoMobiliario.cs" />
     <Compile Include="ClassMobiliario.cs" />
     <Compile Include="ClassTipoMobiliario.cs" />
+    <Compile Include="ClassTipoUsuario.cs" />
     <Compile Include="ClassUbicacion.cs" />
+    <Compile Include="ClassUsuario.cs" />
+    <Compile Include="Password.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
