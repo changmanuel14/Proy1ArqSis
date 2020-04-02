@@ -8,6 +8,7 @@ using Models;
 
 namespace WebUI.Controllers
 {
+    [Authorize]
     public class TipoMobiliarioController : Controller
     {
         // GET: TipoMobiliario

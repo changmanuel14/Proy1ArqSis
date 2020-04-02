@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer
 {
-    class ClassUsuario
+    public class ClassUsuario
     {
         public IEnumerable ListarUsuarios()
         {
@@ -29,6 +29,12 @@ namespace BusinessLogicLayer
             RepositorioGenerico<Usuario> REP = new RepositorioGenerico<Usuario>();
             return REP.ListarConFiltro(x => x.userName == user).ToList();
         }//fin BuscaUsuarioPorUser
+
+        public IEnumerable BuscaUsuarioPorUserPWD(string user, string pwd)
+        {
+            RepositorioGenerico<Usuario> REP = new RepositorioGenerico<Usuario>();
+            return REP.ListarConFiltro(x => x.userName == user && x.password == pwd).ToList();
+        }//fin BuscaUsuarioPorUserPWD
 
         public string NuevoUsuario(string nombre, string pwd, int empleadoId, int tipousuarioId)
         {

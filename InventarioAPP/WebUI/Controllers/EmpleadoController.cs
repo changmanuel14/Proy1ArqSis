@@ -8,6 +8,7 @@ using Models;
 
 namespace WebUI.Controllers
 {
+    [Authorize]
     public class EmpleadoController : Controller
     {
         // GET: Empleado

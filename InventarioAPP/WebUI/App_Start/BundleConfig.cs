@@ -27,16 +27,30 @@ namespace WebUI
                       "~/assets/js/bootstrap*",
                       "~/assets/js/demo.js",
                       "~/assets/js/npm.js",
-                      "~/assets/js/pages/dashboard*"));
+                      "~/assets/js/pages/dashboard*",
+                      "~/assets/vendor/jquery/jquery-3.2.1.min.js",
+                      "~/assets/vendor/animsition/js/animsition.min.js",
+                      "~/assets/vendor/bootstrap/js/popper.js",
+                      "~/assets/vendor/select2/select2.min.js",
+                      "~/assets/vendor/daterangepicker/moment.min.js",
+                      "~/assets/vendor/daterangepicker/daterangepicker.js",
+                      "~/assets/vendor/countdowntime/countdowntime.js",
+                      "~/assets/js/main.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/assets/css/AdminLTE*",
                       "~/assets/css/bootstrap*",
                       "~/assets/css/skins/_all-skins*",
-                      "~/assets/css/skins/skin-*",
-                      "~/assets/plugins/iCheck/icheck*",
-                      "~/assets/plugins/iCheck/all.css"));
+                      "~/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css",
+                      "~/assets/fonts/iconic/css/material-design-iconic-font.min.css",
+                      "~/assets/vendor/animate/animate.css",
+                      "~/assets/vendor/css-hamburgers/hamburgers.min.css",
+                      "~/assets/vendor/animsition/css/animsition.min.css",
+                      "~/assets/vendor/select2/select2.min.css",
+                      "~/assets/vendor/daterangepicker/daterangepicker.css",
+                      "~/assets/css/util.css",
+                      "~/assets/css/main.css"));
         }
     }
 }
