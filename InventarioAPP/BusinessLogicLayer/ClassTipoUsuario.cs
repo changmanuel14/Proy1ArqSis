@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer
 {
-    class ClassTipoUsuario
+    public class ClassTipoUsuario
     {
         public IEnumerable ListarTiposUsuario()
         {

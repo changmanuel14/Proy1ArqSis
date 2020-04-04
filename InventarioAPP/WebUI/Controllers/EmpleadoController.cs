@@ -30,20 +30,21 @@ namespace WebUI.Controllers
         // GET: Categoria/Create
         public ActionResult Create()
         {
+            ClassTipoUsuario tu = new ClassTipoUsuario();
+            var infoTU = tu.ListarTiposUsuario();
+            ViewBag.TipoUsuario = new SelectList(infoTU, "TipousuarioId", "nombre");
             return View();
         }
 
         // POST: Categoria/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Usuario user, FormCollection collection)
         {
             try
             {
                 // TODO: Add insert logic here
                 ClassEmpleado Logica = new ClassEmpleado();
-                string respuesta = Logica.NuevoEmpleado(collection["nombres_empleado"], 
-                    collection["apellidos_empleado"], collection["direccion_empleado"], collection["telefono_empleado"],
-                    collection["cui_empleado"],Convert.ToDateTime(collection["fecha_nacimiento"]));
+                string respuesta = Logica.NuevoEmpleadoUsuario(user, user.Empleado);
                 return RedirectToAction("Index");
             }
             catch

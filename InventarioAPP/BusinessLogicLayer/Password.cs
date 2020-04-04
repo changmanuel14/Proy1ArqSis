@@ -7,7 +7,7 @@ namespace BusinessLogicLayer
 {
     public class Password
     {
-        public static string Encrypt(string plainInput)
+        public string Encrypt(string plainInput)
         {
             var key = "b14ca5898a4e4133bbce2ea2315a1916";
             byte[] iv = new byte[16];
@@ -34,7 +34,7 @@ namespace BusinessLogicLayer
             return Convert.ToBase64String(array);
         }
 
-        public static string Decrypt(string cipherText)
+        public string Decrypt(string cipherText)
         {
             var key = "b14ca5898a4e4133bbce2ea2315a1916";
             byte[] iv = new byte[16];

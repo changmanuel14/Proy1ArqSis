@@ -50,8 +50,9 @@ namespace WebUI.Controllers
         private bool IsValid(Usuario user)
         {
             ClassUsuario usuario = new ClassUsuario();
+            Password pwd = new Password();
             bool IsValid = false;
-            IEnumerable busca = usuario.BuscaUsuarioPorUserPWD(user.userName, user.password);
+            IEnumerable busca = usuario.BuscaUsuarioPorUserPWD(user.userName, pwd.Encrypt(user.password));
 
             if (busca.Cast<object>().Any())
                 IsValid = true;

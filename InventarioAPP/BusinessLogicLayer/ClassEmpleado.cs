@@ -26,7 +26,7 @@ namespace BusinessLogicLayer
         public IEnumerable BuscarEmpleadoPorId(int id)
         {
             RepositorioGenerico<Empleado> REP = new RepositorioGenerico<Empleado>();
-            return REP.ListarConFiltro(x => x.EmpleadoId== id).ToList();
+            return REP.ListarConFiltro(x => x.EmpleadoId == id).ToList();
         }
 
         public string NuevoEmpleado(string nombre, string apellidos, string direccion, string telefono, 
@@ -96,6 +96,52 @@ namespace BusinessLogicLayer
             }
 
             return resultado;
+        }
+
+        public string NuevoEmpleadoUsuario(Usuario user, Empleado emp)
+        {
+            string respuesta = "";
+
+            try
+            {
+                ClassUsuario cUser = new ClassUsuario();
+                IEnumerable busca = cUser.BuscaUsuarioPorUser(user.userName);
+
+                if (busca.Cast<object>().Any())
+                    respuesta = "Error: Ya existe el usuario.";
+                else
+                {
+                    RepositorioGenerico<Empleado> REPE = new RepositorioGenerico<Empleado>();
+                    RepositorioGenerico<Usuario> REPU = new RepositorioGenerico<Usuario>();
+                    Password pwd = new Password();
+                    //Datos Empleado
+                    emp.estado_empleado = true;
+                    REPE.Agregar(emp);
+                    REPE = null;
+                    //Datos Usuario
+                    user.password = pwd.Encrypt(user.password);
+                    user.EmpleadoId = UltimoEmpleadoId();
+                    REPU.Agregar(user);
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return respuesta;
+        }
+
+        private int UltimoEmpleadoId()
+        {
+            RepositorioGenerico<Empleado> REP = new RepositorioGenerico<Empleado>();
+            var lista = REP.ListarTodo().OrderByDescending(x => x.EmpleadoId).Take(1);
+            int ID = 0;
+            foreach (Empleado emp in lista)
+            {
+                ID = emp.EmpleadoId;
+            }
+            return ID;
         }
     }
 }

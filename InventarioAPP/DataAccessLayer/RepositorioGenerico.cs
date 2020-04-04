@@ -38,6 +38,7 @@ namespace DataAccessLayer
                     contexto.SaveChanges();
                     mensaje = "Se ha grabado el nuevo registro.";
                 }//fin using
+                contexto = null;
             }//fin else
             return mensaje;
         }//fin agregar
