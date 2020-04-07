@@ -3,72 +3,82 @@
 @{
     ViewBag.Title = "Details";
 }
+<section class="content-header">
+    <h2>Detalles</h2>
+</section>
 
-<h2>Details</h2>
+<section class="content">
 
-<div>
-    <h4>Empleado</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.nombres_empleado)
-        </dt>
+    <div class="box">
+        <div class="box-body">
+            <div>
+                <h4>Empleado</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    @{ var nacimiento = Convert.ToDateTime(Model.fecha_nacimiento).ToString("dd/MM/yyyy"); }
+                    <dt>
+                        @Html.DisplayName("Nombres")
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.nombres_empleado)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.nombres_empleado)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.apellidos_empleado)
-        </dt>
+                    <dt>
+                        @Html.DisplayName("Apellidos")
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.apellidos_empleado)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.apellidos_empleado)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.direccion_empleado)
-        </dt>
+                    <dt>
+                        @Html.DisplayName("Dirección")
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.direccion_empleado)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.direccion_empleado)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.telefono_empleado)
-        </dt>
+                    <dt>
+                        @Html.DisplayName("Teléfono")
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.telefono_empleado)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.telefono_empleado)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.cui_empleado)
-        </dt>
+                    <dt>
+                        @Html.DisplayName("CUI")
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.cui_empleado)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.cui_empleado)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.fecha_nacimiento)
-        </dt>
+                    <dt>
+                        @Html.DisplayName("Fecha de Nacimiento")
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.fecha_nacimiento)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => nacimiento)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.estado_empleado)
-        </dt>
+                    <dt>
+                        @Html.DisplayName("Estado")
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.estado_empleado)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.estado_empleado)
+                    </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.EmpleadoId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.EmpleadoId }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>
+    </div>
+
+</section>
