@@ -63,27 +63,13 @@ namespace WebUI.Controllers
 
         // POST: Categoria/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Empleado emp, FormCollection collection)
         {
             try
             {
                 // TODO: Add update logic here
                 ClassEmpleado Logica = new ClassEmpleado();
-                Empleado Emp = new Empleado();
-                Emp.nombres_empleado = collection["nombres_empleado"];
-                Emp.apellidos_empleado = collection["apellidos_empleado"];
-                Emp.direccion_empleado = collection["direccion_empleado"];
-                Emp.telefono_empleado = collection["telefono_empleado"];
-                Emp.cui_empleado = collection["cui_empleado"];
-                Emp.fecha_nacimiento = Convert.ToDateTime(collection["fecha_nacimiento"]);
-                string aux = collection["estado_empleado"];
-                if (aux != "false")
-                {
-                    Emp.estado_empleado = true;
-                }
-                Logica.EditarEmpleado(Emp);
-
-
+                Logica.EditarEmpleado(emp);
                 return RedirectToAction("Index");
             }
             catch
