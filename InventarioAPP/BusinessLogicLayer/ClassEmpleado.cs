@@ -119,6 +119,7 @@ namespace BusinessLogicLayer
                     REPE.Agregar(emp);
                     REPE = null;
                     //Datos Usuario
+                    user.Empleado = null;
                     user.password = pwd.Encrypt(user.password);
                     user.EmpleadoId = UltimoEmpleadoId();
                     REPU.Agregar(user);
