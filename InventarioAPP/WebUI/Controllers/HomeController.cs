@@ -7,7 +7,6 @@ using System.Web.Mvc;
 namespace WebUI.Controllers
 {
     [Authorize]
-    [Authorize(Roles = "ADMINISTRADOR, DIGITADOR")]
     public class HomeController : Controller
     {
         public ActionResult Index()
