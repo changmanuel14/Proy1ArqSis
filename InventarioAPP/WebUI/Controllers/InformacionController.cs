@@ -10,7 +10,7 @@ namespace WebUI.Controllers
     {
         // GET: Informacion
         [Authorize]
-        [Authorize(Roles = "ADMINISTRADOR, DIGITADOR")]
+        [Authorize(Roles = "ADMINISTRADOR, GERENTE")]
         public ActionResult Index()
         {
             return View();
