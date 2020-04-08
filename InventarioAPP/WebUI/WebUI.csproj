@@ -131,6 +131,7 @@
     <Compile Include="Controllers\EdificioController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InformacionController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MobiliarioController.cs" />
     <Compile Include="Controllers\TipoMobiliarioController.cs" />
@@ -139,6 +140,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VerificacionRoles.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\AdminLTE.css" />
@@ -1044,6 +1046,7 @@
     <Content Include="Views\Mobiliario\Create.cshtml" />
     <Content Include="Views\Mobiliario\Edit.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Informacion\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

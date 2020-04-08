@@ -9,6 +9,7 @@ using Models;
 namespace WebUI.Controllers
 {
     [Authorize]
+    [Authorize(Roles = "ADMINISTRADOR, DIGITADOR")]
     public class EmpleadoController : Controller
     {
         // GET: Empleado

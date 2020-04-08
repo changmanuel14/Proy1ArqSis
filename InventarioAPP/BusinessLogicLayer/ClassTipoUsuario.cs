@@ -22,5 +22,18 @@ namespace BusinessLogicLayer
             RepositorioGenerico<Tipousuario> REP = new RepositorioGenerico<Tipousuario>();
             return REP.ListarConFiltro(x => x.TipousuarioId == id).ToList();
         }//fin BuscaTipoUsuarioPorId
+
+        public string[] GetUserRole(string username)
+        {
+            using (var context = new inventarioDBEntities())
+            {
+                var result = (from usuario in context.Usuario
+                              join role in context.Tipousuario on usuario.TipousuarioId equals role.TipousuarioId
+                              where usuario.userName == username
+                              select role.nombre).ToArray();
+                return result;
+            }
+                throw new NotImplementedException();
+        }
     }
 }

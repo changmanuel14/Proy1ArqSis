@@ -1,5 +1,6 @@
 ﻿@if (User.Identity.IsAuthenticated)
 {
+    string role = Session["Role"].ToString();
     <!DOCTYPE html>
     <html>
     <head>
@@ -34,24 +35,31 @@
             <aside class="main-sidebar">
                 <section class="sidebar">
                     <ul class="sidebar-menu">
-                        <li class="header">MENÚ</li>
+                        <li class="header">MENÚ - @Session["Role"]</li>
 
                         <!--li class="treeview"> ESTE ES POR SI NECESITAMOS UN DROPDOWN, TOMAR COMO EJEMPLO
-                            <a href="#">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                                <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-                            </ul>
-                        </ li-->
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+        </ul>
+    </ li-->
 
-                        <li>@Html.ActionLink("  Categoria", "Index", "Categoria", new { area = "" }, new { @class = "fa fa-book" })</li>
-                        <li>@Html.ActionLink("  Mobiliario", "Index", "Mobiliario", new { area = "" }, new { @class = "fa fa-book" })</li>
-                        <li>@Html.ActionLink("  Tipo de Mobiliario", "Index", "TipoMobiliario", new { area = "" }, new { @class = "fa  fa-align-justify" })</li>
-                        <li>@Html.ActionLink("  Edificio", "Index", "Edificio", new { area = "" }, new { @class = "fa fa-building" })</li>
-                        <li>@Html.ActionLink("  Empleado", "Index", "Empleado", new { area = "" }, new { @class = "fa fa-user" })</li>
-                        <li>@Html.ActionLink("  Ubicación", "Index", "Ubicacion", new { area = "" }, new { @class = "fa fa-map-marker" })</li>
+                        @if ((role == "ADMINISTRADOR") || (role == "DIGITADOR"))
+                        {
+                            <li>@Html.ActionLink("  Categoria", "Index", "Categoria", new { area = "" }, new { @class = "fa fa-book" })</li>
+                            <li>@Html.ActionLink("  Mobiliario", "Index", "Mobiliario", new { area = "" }, new { @class = "fa fa-book" })</li>
+                            <li>@Html.ActionLink("  Tipo de Mobiliario", "Index", "TipoMobiliario", new { area = "" }, new { @class = "fa  fa-align-justify" })</li>
+                            <li>@Html.ActionLink("  Edificio", "Index", "Edificio", new { area = "" }, new { @class = "fa fa-building" })</li>
+                            <li>@Html.ActionLink("  Empleado", "Index", "Empleado", new { area = "" }, new { @class = "fa fa-user" })</li>
+                            <li>@Html.ActionLink("  Ubicación", "Index", "Ubicacion", new { area = "" }, new { @class = "fa fa-map-marker" })</li>
+                        }
+                        @if ((role == "ADMINISTRADOR") || (role == "GERENTE"))
+                        {
+                            <li>@Html.ActionLink("  Información", "Index", "Informacion", new { area = "" }, new { @class = "fa fa-book" })</li>
+                        }
                         <hr />
                         <li>@Html.ActionLink("  Cerrar Sesión", "LogOut", "Login", new { area = "" }, new { @class = "fa fa-sign-out" })</li>
                     </ul>

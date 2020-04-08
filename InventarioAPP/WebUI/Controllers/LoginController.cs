@@ -22,7 +22,9 @@ namespace WebUI.Controllers
             }
             else
             {
-                return Redirect("/Home");
+                ClassTipoUsuario tu = new ClassTipoUsuario();
+                Session["Role"] = tu.GetUserRole(HttpContext.User.Identity.Name)[0];
+                return Redirect("/Home/index");
             }
             
         }
@@ -33,7 +35,9 @@ namespace WebUI.Controllers
             if (IsValid(user))
             {
                 FormsAuthentication.SetAuthCookie(user.userName, false);
-                return Redirect("/Home");
+                ClassTipoUsuario tu = new ClassTipoUsuario();
+                Session["Role"] = tu.GetUserRole(user.userName)[0];
+                return Redirect("/Home/index");
             }
             else
             {
@@ -44,7 +48,7 @@ namespace WebUI.Controllers
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
-            return Redirect("/Home");
+            return Redirect("/Home/index");
         }
 
         private bool IsValid(Usuario user)
