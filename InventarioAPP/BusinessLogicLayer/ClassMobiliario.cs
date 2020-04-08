@@ -97,5 +97,17 @@ namespace BusinessLogicLayer
 
             return resultado;
         }
+
+       /* public IEnumerable informacion1()
+        {
+            try
+            {
+                inventarioDBEntities context = new inventarioDBEntities();
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }*/
     }
 }
