@@ -12,9 +12,6 @@ namespace Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Objects;
-    using System.Data.Objects.DataClasses;
-    using System.Linq;
     
     public partial class inventarioDBEntities : DbContext
     {
@@ -39,10 +36,5 @@ namespace Models
         public DbSet<Ubicacion> Ubicacion { get; set; }
         public DbSet<Tipousuario> Tipousuario { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
-    
-        public virtual ObjectResult<InformeInventario_Result> InformeInventario()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<InformeInventario_Result>("InformeInventario");
-        }
     }
 }

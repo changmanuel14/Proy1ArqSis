@@ -235,7 +235,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="InformeInventario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="inventarioDBModelStoreContainer">
           <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Edificio" EntityType="Self.Edificio" Schema="dbo" store:Type="Tables" />
@@ -550,7 +549,6 @@
             <End Role="Tipousuario" EntitySet="Tipousuario" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
-          <FunctionImport Name="InformeInventario" ReturnType="Collection(inventarioDBModel.InformeInventario_Result)" />
         </EntityContainer>
         <EntityType Name="Tipousuario">
           <Key>
@@ -597,13 +595,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="InformeInventario_Result">
-          <Property Type="String" Name="nombre_edificio" Nullable="false" MaxLength="150" />
-          <Property Type="String" Name="nombre_ubicacion" Nullable="false" MaxLength="150" />
-          <Property Type="String" Name="nombre_categoria" Nullable="true" MaxLength="200" />
-          <Property Type="String" Name="DescripcionTM" Nullable="false" MaxLength="250" />
-          <Property Type="String" Name="descripcion_mobiliario" Nullable="false" MaxLength="150" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -731,17 +722,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="InformeInventario" FunctionName="inventarioDBModel.Store.InformeInventario">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="inventarioDBModel.InformeInventario_Result">
-                <ScalarProperty Name="nombre_edificio" ColumnName="nombre_edificio" />
-                <ScalarProperty Name="nombre_ubicacion" ColumnName="nombre_ubicacion" />
-                <ScalarProperty Name="nombre_categoria" ColumnName="nombre_categoria" />
-                <ScalarProperty Name="DescripcionTM" ColumnName="DescripcionTM" />
-                <ScalarProperty Name="descripcion_mobiliario" ColumnName="descripcion_mobiliario" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -13,7 +13,6 @@ namespace WebUI.Controllers
         [Authorize(Roles = "ADMINISTRADOR, GERENTE")]
         public ActionResult Index()
         {
-
             return View();
         }
     }
