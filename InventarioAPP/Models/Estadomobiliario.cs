@@ -11,18 +11,19 @@ namespace Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Estadomobiliario
     {
         public Estadomobiliario()
         {
             this.Mobiliario = new HashSet<Mobiliario>();
         }
-    
+
         public int EstadomobiliarioId { get; set; }
         public string descripcion_estado { get; set; }
         public bool estado_actual { get; set; }
-    
+
         public virtual ICollection<Mobiliario> Mobiliario { get; set; }
     }
+
 }

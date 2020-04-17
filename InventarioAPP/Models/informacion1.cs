@@ -12,15 +12,12 @@ namespace Models
     using System;
     using System.Collections.Generic;
 
-    public partial class Usuario
+    public partial class informacion1
     {
-        public int UsuarioId { get; set; }
-        public string userName { get; set; }
-        public string password { get; set; }
-        public int EmpleadoId { get; set; }
-        public int TipousuarioId { get; set; }
-
-        public virtual Empleado Empleado { get; set; }
-        public virtual Tipousuario Tipousuario { get; set; }
+        public string nombre_edificio { get; set; }
+        public string nombre_ubicacion { get; set; }
+        public string nombre_categoria { get; set; }
+        public string DescripcionTM { get; set; }
+        public string descripcion_mobiliario { get; set; }
     }
 }

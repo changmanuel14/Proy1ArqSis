@@ -11,18 +11,18 @@ namespace Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Tipousuario
     {
         public Tipousuario()
         {
             this.Usuario = new HashSet<Usuario>();
         }
-    
+
         public int TipousuarioId { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
-    
+
         public virtual ICollection<Usuario> Usuario { get; set; }
     }
 }

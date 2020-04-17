@@ -115,6 +115,21 @@
           <Property Name="EmpleadoId" Type="int" Nullable="false" />
           <Property Name="TipousuarioId" Type="int" Nullable="false" />
         </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'inventarioDB.dbo.informacion1' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="informacion1">
+          <Key>
+            <PropertyRef Name="nombre_edificio" />
+            <PropertyRef Name="nombre_ubicacion" />
+            <PropertyRef Name="DescripcionTM" />
+            <PropertyRef Name="descripcion_mobiliario" />
+          </Key>
+          <Property Name="nombre_edificio" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="nombre_ubicacion" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="nombre_categoria" Type="nvarchar" MaxLength="200" />
+          <Property Name="DescripcionTM" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="descripcion_mobiliario" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Usuario_Empleado">
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
@@ -247,6 +262,15 @@
           <EntitySet Name="Tipousuario" EntityType="Self.Tipousuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ubicacion" EntityType="Self.Ubicacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="informacion1" EntityType="Self.informacion1" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [informacion1].[nombre_edificio] AS [nombre_edificio], 
+    [informacion1].[nombre_ubicacion] AS [nombre_ubicacion], 
+    [informacion1].[nombre_categoria] AS [nombre_categoria], 
+    [informacion1].[DescripcionTM] AS [DescripcionTM], 
+    [informacion1].[descripcion_mobiliario] AS [descripcion_mobiliario]
+    FROM [dbo].[informacion1] AS [informacion1]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Usuario_Empleado" Association="Self.FK_Usuario_Empleado">
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="Usuario" EntitySet="Usuario" />
@@ -549,6 +573,7 @@
             <End Role="Tipousuario" EntitySet="Tipousuario" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
+          <EntitySet Name="informacion1" EntityType="inventarioDBModel.informacion1" />
         </EntityContainer>
         <EntityType Name="Tipousuario">
           <Key>
@@ -595,6 +620,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="informacion1">
+          <Key>
+            <PropertyRef Name="nombre_edificio" />
+            <PropertyRef Name="nombre_ubicacion" />
+            <PropertyRef Name="DescripcionTM" />
+            <PropertyRef Name="descripcion_mobiliario" />
+          </Key>
+          <Property Name="nombre_edificio" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="nombre_ubicacion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="nombre_categoria" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DescripcionTM" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="descripcion_mobiliario" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -719,6 +757,17 @@
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="userName" ColumnName="userName" />
                 <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="informacion1">
+            <EntityTypeMapping TypeName="inventarioDBModel.informacion1">
+              <MappingFragment StoreEntitySet="informacion1">
+                <ScalarProperty Name="descripcion_mobiliario" ColumnName="descripcion_mobiliario" />
+                <ScalarProperty Name="DescripcionTM" ColumnName="DescripcionTM" />
+                <ScalarProperty Name="nombre_categoria" ColumnName="nombre_categoria" />
+                <ScalarProperty Name="nombre_ubicacion" ColumnName="nombre_ubicacion" />
+                <ScalarProperty Name="nombre_edificio" ColumnName="nombre_edificio" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

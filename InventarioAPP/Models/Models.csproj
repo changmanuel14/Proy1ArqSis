@@ -72,6 +72,9 @@
     <Compile Include="Hojaencabezado.cs">
       <DependentUpon>Model_Inventario.tt</DependentUpon>
     </Compile>
+    <Compile Include="informacion1.cs">
+      <DependentUpon>Model_Inventario.tt</DependentUpon>
+    </Compile>
     <Compile Include="Mobiliario.cs">
       <DependentUpon>Model_Inventario.tt</DependentUpon>
     </Compile>

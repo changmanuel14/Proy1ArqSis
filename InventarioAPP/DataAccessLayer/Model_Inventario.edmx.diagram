@@ -26,6 +26,7 @@
         <EntityTypeShape EntityType="inventarioDBModel.Usuario" Width="1.5" PointX="7.375" PointY="8.375" />
         <AssociationConnector Association="inventarioDBModel.FK_Usuario_Empleado" />
         <AssociationConnector Association="inventarioDBModel.FK_Usuario_Tipousuario" />
+        <EntityTypeShape EntityType="inventarioDBModel.informacion1" Width="1.5" PointX="7.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

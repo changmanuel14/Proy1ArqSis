@@ -11,14 +11,14 @@ namespace Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Hojadetalle
     {
         public int HojadetalleId { get; set; }
         public Nullable<int> MobiliarioId { get; set; }
         public Nullable<int> HojaencabezadoId { get; set; }
         public System.DateTime fecha_asignacion { get; set; }
-    
+
         public virtual Mobiliario Mobiliario { get; set; }
         public virtual Hojaencabezado Hojaencabezado { get; set; }
     }

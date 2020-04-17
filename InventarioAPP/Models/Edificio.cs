@@ -11,19 +11,19 @@ namespace Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Edificio
     {
         public Edificio()
         {
             this.Ubicacion = new HashSet<Ubicacion>();
         }
-    
+
         public int EdificioId { get; set; }
         public string nombre_edificio { get; set; }
         public string observacion { get; set; }
         public bool estado_edificio { get; set; }
-    
+
         public virtual ICollection<Ubicacion> Ubicacion { get; set; }
     }
 }

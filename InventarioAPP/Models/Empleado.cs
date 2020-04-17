@@ -11,7 +11,7 @@ namespace Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Empleado
     {
         public Empleado()
@@ -19,7 +19,7 @@ namespace Models
             this.Hojaencabezado = new HashSet<Hojaencabezado>();
             this.Usuario = new HashSet<Usuario>();
         }
-    
+
         public int EmpleadoId { get; set; }
         public string nombres_empleado { get; set; }
         public string apellidos_empleado { get; set; }
@@ -28,7 +28,7 @@ namespace Models
         public string cui_empleado { get; set; }
         public System.DateTime fecha_nacimiento { get; set; }
         public bool estado_empleado { get; set; }
-    
+
         public virtual ICollection<Hojaencabezado> Hojaencabezado { get; set; }
         public virtual ICollection<Usuario> Usuario { get; set; }
     }

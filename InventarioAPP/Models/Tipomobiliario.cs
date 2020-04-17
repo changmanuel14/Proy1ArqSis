@@ -11,21 +11,22 @@ namespace Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Tipomobiliario
     {
         public Tipomobiliario()
         {
             this.Mobiliario = new HashSet<Mobiliario>();
         }
-    
+
         public int TipomobiliarioId { get; set; }
         public Nullable<int> CategoriaId { get; set; }
         public string descripcion { get; set; }
         public int control_serie { get; set; }
         public bool estado_tipomobiliario { get; set; }
-    
+
         public virtual Categoria Categoria { get; set; }
         public virtual ICollection<Mobiliario> Mobiliario { get; set; }
     }
+
 }

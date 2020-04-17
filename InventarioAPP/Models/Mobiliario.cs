@@ -11,14 +11,14 @@ namespace Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Mobiliario
     {
         public Mobiliario()
         {
             this.Hojadetalle = new HashSet<Hojadetalle>();
         }
-    
+
         public int MobiliarioId { get; set; }
         public Nullable<int> EstadomobiliarioId { get; set; }
         public Nullable<int> TipomobiliarioId { get; set; }
@@ -28,7 +28,7 @@ namespace Models
         public string numero_serie { get; set; }
         public Nullable<System.DateTime> fecha_baja { get; set; }
         public string observacion { get; set; }
-    
+
         public virtual Estadomobiliario Estadomobiliario { get; set; }
         public virtual ICollection<Hojadetalle> Hojadetalle { get; set; }
         public virtual Ubicacion Ubicacion { get; set; }

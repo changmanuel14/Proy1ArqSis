@@ -36,5 +36,6 @@ namespace Models
         public DbSet<Ubicacion> Ubicacion { get; set; }
         public DbSet<Tipousuario> Tipousuario { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<informacion1> informacion1 { get; set; }
     }
 }

@@ -11,20 +11,20 @@ namespace Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Ubicacion
     {
         public Ubicacion()
         {
             this.Mobiliario = new HashSet<Mobiliario>();
         }
-    
+
         public int UbicacionId { get; set; }
         public Nullable<int> EdificioId { get; set; }
         public string nombre_ubicacion { get; set; }
         public string observacion { get; set; }
         public bool estado_ubicacion { get; set; }
-    
+
         public virtual Edificio Edificio { get; set; }
         public virtual ICollection<Mobiliario> Mobiliario { get; set; }
     }

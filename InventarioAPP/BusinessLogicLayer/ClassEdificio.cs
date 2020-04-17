@@ -18,6 +18,12 @@ namespace BusinessLogicLayer
             return REP.ListarTodo();
         }//fin listar edificios
 
+        public IEnumerable informacion1()
+        {
+            RepositorioGenerico<informacion1> REP = new RepositorioGenerico<informacion1>();
+            return REP.ListarTodo();
+        }
+
         public IEnumerable BuscaEdificio(string nombre)
         {
             RepositorioGenerico<Edificio> REP = new RepositorioGenerico<Edificio>();
