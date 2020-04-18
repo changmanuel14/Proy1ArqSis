@@ -184,6 +184,7 @@
     <Content Include="assets\fonts\iconic\css\material-design-iconic-font.min.css" />
     <Content Include="assets\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="assets\images\bg-01.jpg" />
+    <Content Include="assets\images\foto.jpg" />
     <Content Include="assets\images\icons\favicon.ico" />
     <Content Include="assets\js\app.js" />
     <Content Include="assets\js\app.min.js" />
